@@ -1,9 +1,6 @@
 import streamlit as st
 import plotly.express as px
 import pandas as pd
-import os
-import warnings
-warnings.filterwarnings('ignore')
 
 st.set_page_config(page_title="Superstore Analysis", page_icon=":bar_chart:",layout="wide")
 
@@ -14,9 +11,6 @@ if fl is not None:
     filename = fl.name
     st.write(filename)
     df = pd.read_csv(filename, encoding = "ISO-8859-1")
-else:
-    os.chdir(r"C:\Users\bhara\OneDrive\Desktop\Aishuvscode")
-    df = pd.read_csv("Superstore.csv", encoding = "ISO-8859-1")
 col1, col2 = st.columns((2))
 df["Order Date"] = pd.to_datetime(df["Order Date"])
 
